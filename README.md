@@ -105,19 +105,3 @@ The frontend runs on `http://localhost:3000` and proxies API requests to `http:/
 | `GET` | `/api/reference/medications` | Available medications |
 | `GET` | `/api/reference/dosages` | Available dosages |
 | `GET` | `/api/health` | Health check |
-
-## Deployment
-
-### Backend — Render (Free)
-1. Push to GitHub
-2. Go to [render.com](https://render.com) → New Web Service
-3. Connect your GitHub repo, set root directory to `backend`
-4. Build command: `pip install -r requirements.txt`
-5. Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-6. Add environment variables: `MONGODB_URI`, `JWT_SECRET`, `FRONTEND_URL`
-
-### Frontend — Vercel (Free)
-1. Go to [vercel.com](https://vercel.com) → Import Project
-2. Connect your GitHub repo, set root directory to `frontend`
-3. Framework preset: Create React App
-4. Add environment variable: `REACT_APP_API_URL` = your Render backend URL + `/api`
