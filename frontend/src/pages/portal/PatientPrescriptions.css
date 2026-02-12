@@ -1,0 +1,162 @@
+.rx-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rx-card {
+  overflow: hidden;
+}
+
+.rx-card-main {
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.rx-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.rx-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rx-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--slate-800);
+}
+
+.rx-dosage {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  margin-top: 1px;
+}
+
+.rx-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.rx-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rx-detail-label {
+  font-size: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--slate-400);
+}
+
+.rx-detail-value {
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+/* Expandable refill section */
+.rx-expand-section {
+  border-top: 1px solid var(--slate-100);
+}
+
+.rx-expand-btn {
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--slate-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.rx-expand-btn:hover {
+  background: var(--slate-50);
+}
+
+.rx-refill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 0 16px 14px;
+}
+
+.rx-refill-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--slate-50);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--slate-600);
+  font-family: var(--font-display);
+}
+
+.rx-refill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--slate-300);
+  flex-shrink: 0;
+}
+
+.rx-refill-dot-active {
+  background: var(--accent-500);
+}
+
+/* ─── Desktop ─── */
+@media (min-width: 640px) {
+  .rx-page { gap: 24px; }
+  .rx-list { gap: 16px; }
+  .rx-card-main { padding: 20px; gap: 16px; }
+
+  .rx-card-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .rx-name { font-size: 1rem; }
+  .rx-dosage { font-size: 0.875rem; }
+
+  .rx-details {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .rx-detail-value { font-size: 0.875rem; }
+  .rx-expand-btn { padding: 12px 20px; font-size: 0.875rem; }
+
+  .rx-refill-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0 20px 16px;
+  }
+
+  .rx-refill-item { font-size: 0.875rem; padding: 8px 12px; }
+}

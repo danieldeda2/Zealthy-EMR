@@ -1,0 +1,127 @@
+.pl-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pl-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Search */
+.pl-search-wrap {
+  position: relative;
+}
+
+.pl-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--slate-400);
+}
+
+/* ─── Card Grid ─── */
+.pl-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.pl-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.pl-card:hover {
+  border-color: var(--brand-300);
+  box-shadow: 0 4px 20px rgba(18, 132, 245, 0.1);
+  transform: translateY(-2px);
+}
+
+.pl-card:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.pl-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pl-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--brand-100), var(--brand-200));
+  color: var(--brand-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.pl-chevron {
+  color: var(--slate-300);
+  transition: all var(--transition-base);
+}
+
+.pl-card:hover .pl-chevron {
+  color: var(--brand-500);
+  transform: translateX(3px);
+}
+
+.pl-card-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--slate-800);
+  margin-bottom: 2px;
+}
+
+.pl-card-email {
+  font-size: 0.8rem;
+  color: var(--slate-400);
+  margin-bottom: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pl-card-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pl-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ─── Desktop: 2-col grid ─── */
+@media (min-width: 640px) {
+  .pl-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .pl-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

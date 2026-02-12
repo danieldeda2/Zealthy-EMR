@@ -1,0 +1,45 @@
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+.clear-link {
+  font-size: 0.75rem;
+  color: var(--red-500);
+  margin-top: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-body);
+}
+
+.clear-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .form-actions .btn {
+    flex: none;
+  }
+
+  .form-actions {
+    justify-content: flex-end;
+  }
+}

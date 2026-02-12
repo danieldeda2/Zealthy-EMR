@@ -1,0 +1,45 @@
+.confirm-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.confirm-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--red-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-message {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+}
+
+.confirm-actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  width: 100%;
+}
+
+.confirm-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .confirm-actions {
+    flex-direction: row;
+  }
+
+  .confirm-actions .btn {
+    flex: 1;
+    width: auto;
+  }
+}

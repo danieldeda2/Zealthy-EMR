@@ -1,0 +1,197 @@
+.pd-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Header ─── */
+.pd-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pd-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pd-header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pd-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-100);
+  color: var(--brand-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.pd-email-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: var(--slate-500);
+}
+
+/* Edit button full-width on mobile */
+.pd-header > .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ─── Sections ─── */
+.pd-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pd-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pd-section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--slate-800);
+}
+
+/* Add button full-width on mobile */
+.pd-btn-sm {
+  font-size: 0.8rem;
+  padding: 10px 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.pd-empty {
+  padding: 32px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-empty p {
+  font-size: 0.875rem;
+  color: var(--slate-500);
+}
+
+/* ─── Items ─── */
+.pd-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd-item {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pd-item .list-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pd-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.pd-item-meta-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--slate-500);
+}
+
+.pd-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.pd-delete-btn {
+  color: var(--red-500) !important;
+}
+
+.pd-delete-btn:hover {
+  background: var(--red-50) !important;
+  color: var(--red-600) !important;
+}
+
+/* ─── Desktop ─── */
+@media (min-width: 768px) {
+  .pd-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pd-header > .btn {
+    width: auto;
+  }
+
+  .pd-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .pd-header-info { gap: 16px; }
+  .pd-header-left { gap: 16px; }
+  .pd-email-row { font-size: 0.875rem; }
+
+  .pd-section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pd-btn-sm {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+
+  .pd-section-title { font-size: 1.1rem; }
+
+  .pd-item {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+  }
+}
