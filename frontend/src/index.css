@@ -364,3 +364,8 @@ input, select, textarea {
   border-color: rgba(255, 255, 255, 0.3);
   border-top-color: #fff;
 }
+
+html, body, #root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
