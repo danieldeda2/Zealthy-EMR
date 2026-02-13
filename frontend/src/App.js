@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -15,6 +16,14 @@ import PatientDetail from './pages/admin/PatientDetail';
 import PatientForm from './pages/admin/PatientForm';
 
 import './App.css';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -34,6 +43,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <ScrollToTop />
         <Toaster
           position="top-right"
           toastOptions={{
@@ -49,7 +59,6 @@ export default function App() {
         />
 
         <Routes>
-          {/* Patient Portal */}
           <Route path="/" element={<AuthRoute><LoginPage /></AuthRoute>} />
 
           <Route element={<ProtectedRoute><PortalLayout /></ProtectedRoute>}>
@@ -58,7 +67,6 @@ export default function App() {
             <Route path="/prescriptions" element={<PatientPrescriptions />} />
           </Route>
 
-          {/* Admin EMR */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<PatientList />} />
             <Route path="patients/new" element={<PatientForm />} />
