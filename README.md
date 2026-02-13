@@ -32,37 +32,6 @@ A full-stack healthcare application featuring an admin EMR interface for managin
     └── requirements.txt
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- Python 3.10+
-- MongoDB Atlas account (free tier works)
-
-### 1. Backend Setup
-
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate        # macOS/Linux
-venv\Scripts\activate           # Windows
-pip install -r requirements.txt
-cp .env.example .env            # Edit with your credentials
-python seed.py
-python run.py
-```
-
-### 2. Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-The frontend runs on `http://localhost:3000` and proxies API requests to `http://localhost:8000`.
-
 ### Test Credentials
 
 | Email | Password |
